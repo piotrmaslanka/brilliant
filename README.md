@@ -1,4 +1,4 @@
-# Brilliant
+# The Brilliant Python Bean
 
 Brilliant is a object scope tracker. That means you can have singletion-scoped objects, session-scoped objects, and so on. Essentially Brilliant is a Spring for Python, but without all that XML clumsiness, and just the juice.
 
@@ -41,4 +41,6 @@ Example with session scoping:
             
     def logout(key):
         Session.get(key).destroy()
+        
+Check out brilliant.smep for a very basic HTTP server
             
