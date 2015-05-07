@@ -2,10 +2,10 @@
 A single web servering component for JSON"""
 from threading import Thread
 from SocketServer import ThreadingMixIn
-from BaseHTTPServer import HTTPServer
+from BaseHTTPServer import HTTPServer, BaseHTTPRequestHandler
 import cgi, json
 
-class SMEPHandler(object):
+class SMEPHandler(BaseHTTPRequestHandler):
     """Base class for web event handlers"""
     
     def post(self, arguments):
