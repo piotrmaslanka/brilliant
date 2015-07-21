@@ -29,7 +29,10 @@ class SMEPHandler(BaseHTTPRequestHandler):
             self.send_response(statusCode)
             self.send_header("Access-Control-Allow-Origin", "*")
             self.end_headers()
-    
+
+    def do_GET(self):
+        self.get()
+
     def do_POST(self):
         length = int(self.headers.getheader('content-length'))
         postvars = cgi.parse_qs(self.rfile.read(length), keep_blank_values=1)
