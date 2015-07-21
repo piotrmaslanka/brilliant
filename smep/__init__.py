@@ -21,12 +21,13 @@ class SMEPHandler(BaseHTTPRequestHandler):
         
         if statusCode == 200:
             self.send_response(statusCode)
-            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Type", contentType)
             self.send_header("Access-Control-Allow-Origin", "*")
             self.end_headers()
             self.wfile.write(data)
         else:
             self.send_response(statusCode)
+            self.send_header("Content-Type", contentType)
             self.send_header("Access-Control-Allow-Origin", "*")
             self.end_headers()
 
